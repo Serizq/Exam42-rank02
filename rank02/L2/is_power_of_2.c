@@ -10,7 +10,7 @@ This function returns 1 if the given number is a power of 2, otherwise it return
 
 Your function must be declared as follows:
 
-int	    is_power_of_2(unsigned int n);
+int	is_power_of_2(unsigned int n);
 */
 #include <stdio.h>
 
@@ -20,15 +20,12 @@ int	is_power_of_2(unsigned int n)
 		return(0);
 	while(n % 2 == 0)
 		n = n / 2;
-	if(n == 1)
-		return(1);
-	else
-		return(0);
+	return( n == 1);
 }
 
 int	main()
 {
-	int numb = 33;
-	printf( "el resultado es: %d", is_power_of_2(numb));
+	int num = 64;
+	printf("¿es potencia de 2?: %i\n", is_power_of_2(num));
 	return(0);
 }
