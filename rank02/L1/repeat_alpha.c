@@ -28,38 +28,33 @@ $>./repeat_alpha "" | cat -e
 $
 $>
 */
-
 #include <unistd.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	char	*string = argv[1];
+	char	*str = argv[1];
 	int	i = 0;
+	int	repeat;
 
-	if (argc != 2)
+	if(argc == 2)
 	{
-		write(1, "\n", 1);
-		return(0);
-	}
-
-	while(string[i])
-	{
-		char	c = string[i];
-		int	repeat = 1;
-
-		if(c >= 'a' && c <= 'z')
-			repeat = c - 'a' + 1;
-		else if(c >= 'A' && c <= 'Z')
-			repeat = c - 'A' + 1;
-		
-		int	j = 0;
-		while(j < repeat)
+		while(str[i] != '\0')
 		{
-			write(1, &c, 1);
-			j++;
+			char	c = str[i];
+			repeat = 1;
+			if(c >= 'a' && c <= 'z')
+				repeat = c - 'a' + 1;
+			if(c >= 'A' && c <= 'Z')
+				repeat = c - 'A' + 1;
+			int	j = 0;
+			while(j < repeat)
+			{
+				write(1, &c, 1);
+				j++;
+			}
+			i++;
 		}
-		i++;
 	}
-	write (1, "\n", 1);
-	return 0;
+	write(1, "\n", 1);
+	return(0);
 }
