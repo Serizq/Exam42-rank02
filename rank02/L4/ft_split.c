@@ -33,9 +33,9 @@ char	**ft_split(char *str)
 		if(!(split[k] = (char *)malloc(sizeof(char) * 4096))) // reservamos 4096 caracteres por palabra
 		return(NULL);
 		while(str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
-			split[k][j++] == str[i++]; //rellenamos la palabra
+			split[k][j++] = str[i++]; //rellenamos la palabra
 		split[k][j] = '\0'; // finalizamos la palabra con el nulo
-		while(str[i] == ' ' || str[i] == '\t' || str[i] == '\0')
+		while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 			i++;
 		k++; // pasamos a la siguiente palabra
 	}
