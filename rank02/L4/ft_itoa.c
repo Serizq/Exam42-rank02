@@ -1,3 +1,22 @@
+/*
+Assignment name  : ft_itoa
+Expected files   : ft_itoa.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes an int and converts it to a null-terminated string.
+The function returns the result in a char array that you must allocate.
+
+Your function must be declared as follows:
+
+char	*ft_itoa(int nbr);*/
+
+
+// Se calcula la longitud necesaria para representar el número como una cadena.
+// Se asigna memoria dinámicamente para la cadena.
+// Se llena la cadena con los dígitos del número, comenzando desde el final.
+// Se manejan casos especiales para números negativos y cero.
+// Se devuelve la cadena resultante.
 #include <stdlib.h>
 
 int	ft_count_len(int n)

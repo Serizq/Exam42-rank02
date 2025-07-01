@@ -27,25 +27,21 @@ Your function must be prototyped as follows:
 
   unsigned int    lcm(unsigned int a, unsigned int b); */
 
-#include <stdio.h>
-
-unsigned int		gcd(unsigned int a, unsigned int b)
-{
-	while(b != 0)
-	{
-		unsigned int temp;
-		temp = b;
-		b = a % b;
-		a = temp;
-	}
-	return(a);
-}
-
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
+	unsigned int	num;
 	if(a == 0 || b == 0)
 		return(0);
-	return(a * b) / gcd(a, b);
+	if(a > b)
+		num = a;
+	else
+		num = b;
+	while(1)
+	{
+		if(num % a == 0 && num % b == 0)
+			return(num);
+		num++;
+	}
 }
 /*
 int main()

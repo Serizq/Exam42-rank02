@@ -12,17 +12,19 @@ If the array is empty, the function returns 0.******* */
 
 int	max(int *tab, unsigned int len)
 {
-	if(len == 0)
-		return(0);
-	unsigned int	result;
-	int	i = 0;
-	while(tab[i])
+	if (len == 0)
+		return (0);
+
+	int	i = 1;
+	int	result = tab[0];
+
+	while (i < len)
 	{
-		if(i < len)
+		if (tab[i] > result)
 			result = tab[i];
 		i++;
 	}
-	return(result);
+	return (result);
 }
 int	main()
 {
